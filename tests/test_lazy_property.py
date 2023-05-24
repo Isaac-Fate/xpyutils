@@ -37,14 +37,14 @@ class LazyPropertyTestCase(unittest.TestCase):
         p.lucky_number = 100
         self.assertEqual(p.lucky_number, 100)
 
-    def test_get_presense_required_lazy_property(self):
+    def test_get_presence_required_lazy_property(self):
         
         class Person(BasePerson):
             
             def __init__(self, name: str) -> None:
                 super().__init__(name)
                 
-            @lazy_property.require_presense()
+            @lazy_property.require_presence()
             def lucky_number(self) -> int:
                 return random.randint(0, 100)
         
@@ -59,14 +59,14 @@ class LazyPropertyTestCase(unittest.TestCase):
                 "property 'lucky_number' is not present yet"
             )
 
-    def test_cannot_set_presense_required_lazy_property(self):
+    def test_cannot_set_presence_required_lazy_property(self):
         
         class Person(BasePerson):
             
             def __init__(self, name: str) -> None:
                 super().__init__(name)
                 
-            @lazy_property.require_presense()
+            @lazy_property.require_presence()
             def name(self) -> str:
                 return self._name
         
@@ -81,14 +81,14 @@ class LazyPropertyTestCase(unittest.TestCase):
                 "setting 'name' is not allowed"
             )
 
-    def test_can_set_presense_required_lazy_property(self):
+    def test_can_set_presence_required_lazy_property(self):
         
         class Person(BasePerson):
             
             def __init__(self, name: str) -> None:
                 super().__init__(name)
                 
-            @lazy_property.require_presense()
+            @lazy_property.require_presence()
             def name(self) -> str:
                 return self._name
             
@@ -108,7 +108,7 @@ class LazyPropertyTestCase(unittest.TestCase):
             )
         )
     
-    def test_get_presense_required_lazy_property_with_warning(self):
+    def test_get_presence_required_lazy_property_with_warning(self):
         
         class Person(BasePerson):
             

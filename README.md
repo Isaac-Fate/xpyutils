@@ -30,7 +30,7 @@ class Person:
         """
         return random.randint(0, 100)
     
-    @lazy_property.require_presense()
+    @lazy_property.require_presence()
     def age(self) -> int:
         """Age.
         """

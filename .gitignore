@@ -16,5 +16,6 @@ tmp
 # Jupyter Book
 book
 
-# egg dir
+# Python distribution
+dist
 *.egg-info

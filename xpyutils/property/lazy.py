@@ -62,7 +62,7 @@ class lazy_property(base_lazy_property):
         )
     
     @classmethod
-    def require_presense(
+    def require_presence(
             cls, 
             error_message: str | None = None
         ) -> partial[presence_required_property]:
